@@ -54,7 +54,7 @@ LateVisitForm
 
 <a id="field-ids"></a>
 
-## **How to identify fields**
+## **How to store and identify questions**
 
 [Discussion](https://github.com/HealthSamurai/forms-design/discussions/1)
 
@@ -62,8 +62,8 @@ LateVisitForm
 ```clojure
 LateVisitDocument
 {:type aidbox.sdc/form
-:questions [{:label "Super basic question"
-             :id :basic-question}]}
+ :items [{:label "Super basic question"
+          :id :basic-question}]}
 ```
 
 <a id="field-type"></a>
