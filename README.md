@@ -3,7 +3,7 @@
 
 1.  [Goal](#org07d7d94)
 2.  [Decisions](#org3079260)
-   	1.  [**Remove :keys on top level**](#org2fb4829)
+   	1.  [**Remove :keys on top level**](#fields-key-name)
     2.  [**Fields \`ids\` generation**](#field-ids)
     3.  [**Field type**](#field-type)
     4.  [**Question Grouping**](#question-grouping)
@@ -40,35 +40,17 @@
 # Decisions
 
 
-<a id="org2fb4829"></a>
+<a id="fields-key-name"></a>
 
-## **Remove :keys on top level**
+## **How to name property that holds form elements**
 
-1.  Rename to \`:questions\` as map:
+[Discussion](https://github.com/HealthSamurai/forms-design/discussions/8)
 
-        LateVisitDocument
-        {:type aidbox.sdc/form
-         :questions {:question1 {...}}}
-
-    -   semantic
-    -   easy to work from code perspective
-    -   hard to human read
-
-2.  Rename to \`:fields\` as map:
-
-3.  Rename to \`:fields\` as vector
-
-        LateVisitDocument
-        {:type aidbox.sdc/form
-         :fields [{:name "ahahha"}
-                  {}]}
-
-    -   more human readable
-    -   layout generation
-
-4.  Rename to \`:items\` as vector
-    -   similar to fhir questionnaire
-
+``` clojure
+LateVisitForm
+{:type aidbox.sdc/form
+ :items [...]}
+```
 
 <a id="field-ids"></a>
 
